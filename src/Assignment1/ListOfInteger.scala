@@ -46,19 +46,27 @@ object ListOfInteger extends App{
   }
   println("Output for 9: " + removeZeros(List(4, 0, 2, 0, 0, 10, 7)) )
 
-  def toInteger(num: String): Option[Int] = {
+  def OptionExample() {
+    val a: Option[Int] = Some(10)
+    val b: Option[String] = Some("Assignment")
+    val c: Option[Int] = None
+
+    println("Output for 10, Example 1 : " + a.isEmpty +" "+ b.isEmpty +" "+ c.isEmpty)
+  }
+  println(OptionExample)
+
+    def toInteger(num: String): Option[Int] = {
     try {
       Some(Integer.parseInt(num.trim))
     } catch {
       case e: Exception => None
     }
   }
-  print("Output for 10: ")
+  print("Output for 10, Example 2 : ")
   //here if you change the value of num to eg. 34554, it will go to try block and convert the string to integer
   toInteger("abc1234") match  {
     case Some(number) => println(number)
     case None => println("Cannot convert to integer.")
   }
-
 
 }
