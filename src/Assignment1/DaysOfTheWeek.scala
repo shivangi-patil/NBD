@@ -42,34 +42,34 @@ object DaysOfTheWeek extends App {
   }
   println("Output for 1-c : " + returnAStringUsingWhile)
 
-  def returnAStringUsingRecursion (i : Int = 0) : String = {
-    if (i == daysList.length-1) daysList(i)
+  def returnAStringUsingRecursion (daysList: List[String]) : String = {
+    if (daysList.length == 1) daysList.last
     else {
-      var days: String = daysList(i) + "," + returnAStringUsingRecursion(i+1)
+      var days: String = daysList.head + "," + returnAStringUsingRecursion(daysList.tail)
       days
     }
   }
-  println("Output for 2-a : " + returnAStringUsingRecursion())
+  println("Output for 2-a : " + returnAStringUsingRecursion(daysList))
 
-  def returnAStringLastToFirstUsingRecursion (i : Int = 0) : String = {
-    if (i == daysList.length-1) daysList(i)
+  def returnAStringLastToFirstUsingRecursion (daysList: List[String]) : String = {
+    if (daysList.length == 1) daysList.last
     else {
-      var days: String = returnAStringLastToFirstUsingRecursion(i+1) + "," +  daysList(i)
+      var days: String = returnAStringLastToFirstUsingRecursion(daysList.tail) + "," +  daysList.head
       days
     }
   }
-  println("Output for 2-b : " + returnAStringLastToFirstUsingRecursion())
+  println("Output for 2-b : " + returnAStringLastToFirstUsingRecursion(daysList))
 
 
-  def returnAStringUsingTailRecursion(): String = {
+  def returnAStringUsingTailRecursion(daysList: List[String]): String = {
     @tailrec
-    def helper (i : Int = 0, days: String = ""): String =
-      if (i == daysList.length) days.substring(1)
-      else helper(i+1, days + "," + daysList(i))
+    def helper (daysLeft: List[String], acc : String): String =
+      if (daysLeft.isEmpty) acc
+      else helper(daysLeft.tail, acc +","+ daysLeft.head)
 
-    helper()
+    helper(daysList.tail, daysList.head)
   }
-  println("Output for 3 : " + returnAStringUsingTailRecursion())
+  println("Output for 3 : " + returnAStringUsingTailRecursion(daysList))
 
   println("Output for 4-a : " + daysList.foldLeft("")((days, currentDay) => days + "," + currentDay).substring(1))
   println("Output for 4-b : " + daysList.foldRight("")((days, currentDay) => days + "," + currentDay).dropRight(1))

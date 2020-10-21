@@ -1,7 +1,6 @@
 package Assignment1
 
 import scala.annotation.tailrec
-import scala.math._
 
 
 object ListOfInteger extends App{
@@ -28,7 +27,7 @@ object ListOfInteger extends App{
   println("Output for 7: " + listRealNumbersFunction(realNumbers))
 
 
-  def printTupple(tuple: (Int, String, Boolean)) = {
+  def printTupple(tuple: (Int, String, Boolean)): Unit = {
     println(tuple._1, tuple._2, tuple._3)
   }
   val myTuple = (1, "Shivangi", true)
@@ -37,25 +36,25 @@ object ListOfInteger extends App{
 
   def removeZeros(arr: List[Int]): List[Int] = {
     @tailrec
-    def helper(index: Int = 0, acc: List[Int]): List[Int] = {
-      if (index == arr.length) acc
-      else helper(index+1, if(arr(index) == 0) acc else acc :+ arr(index))
+    def helper(arr: List[Int], acc: List[Int]): List[Int] = {
+      if (arr.isEmpty) acc
+      else helper(arr.tail, if(arr.head == 0) acc else acc :+ arr.head)
     }
 
-    helper(0, List[Int]())
+    helper(arr, List[Int]())
   }
   println("Output for 9: " + removeZeros(List(4, 0, 2, 0, 0, 10, 7)) )
 
-  def OptionExample() {
+  def OptionExample(): Unit = {
     val a: Option[Int] = Some(10)
     val b: Option[String] = Some("Assignment")
     val c: Option[Int] = None
 
-    println("Output for 10, Example 1 : " + a.isEmpty +" "+ b.isEmpty +" "+ c.isEmpty)
+    println(s"Output for 10, Example 1 : ${a.isEmpty} ${b.isEmpty} ${c.isEmpty}")
   }
-  println(OptionExample)
+  println(OptionExample())
 
-    def toInteger(num: String): Option[Int] = {
+  def toInteger(num: String): Option[Int] = {
     try {
       Some(Integer.parseInt(num.trim))
     } catch {
