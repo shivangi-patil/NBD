@@ -1,0 +1,1 @@
+MATCH (m:Movie{title: "Captain America: The First Avenger"}) RETURN m

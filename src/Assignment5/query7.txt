@@ -1,0 +1,2 @@
+MATCH (person:Person)-[:WROTE]->(movie:Movie)<-[:DIRECTED]-(person)
+RETURN person.name, movie.title

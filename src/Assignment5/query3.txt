@@ -1,0 +1,1 @@
+MATCH (hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(movie:Movie)<-[:DIRECTED]-(directors) RETURN directors.name
