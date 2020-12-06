@@ -1,0 +1,156 @@
+﻿[
+  {
+    "connections": {
+"start": {
+"identity": 15,
+"labels": [
+          "Airport"
+        ],
+"properties": {
+"name": "IND"
+        }
+      },
+"end": {
+"identity": 13,
+"labels": [
+          "Airport"
+        ],
+"properties": {
+"name": "SMF"
+        }
+      },
+"segments": [
+        {
+          "start": {
+"identity": 15,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "IND"
+            }
+          },
+          "relationship": {
+"identity": 155,
+"start": 195,
+"end": 15,
+"type": "ORIGIN",
+"properties": {
+
+            }
+          },
+          "end": {
+"identity": 195,
+"labels": [
+              "Flight"
+            ],
+"properties": {
+"date": "11/30/2015 17:30:21",
+"duration": 47,
+"distance": 177,
+"airline": "19977"
+            }
+          }
+        },
+        {
+          "start": {
+"identity": 195,
+"labels": [
+              "Flight"
+            ],
+"properties": {
+"date": "11/30/2015 17:30:21",
+"duration": 47,
+"distance": 177,
+"airline": "19977"
+            }
+          },
+          "relationship": {
+"identity": 156,
+"start": 195,
+"end": 7,
+"type": "DESTINATION",
+"properties": {
+
+            }
+          },
+          "end": {
+"identity": 7,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "ORD"
+            }
+          }
+        },
+        {
+          "start": {
+"identity": 7,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "ORD"
+            }
+          },
+          "relationship": {
+"identity": 130,
+"start": 175,
+"end": 7,
+"type": "ORIGIN",
+"properties": {
+
+            }
+          },
+          "end": {
+"identity": 175,
+"labels": [
+              "Flight"
+            ],
+"properties": {
+"date": "11/30/2015 15:22:49",
+"duration": 227,
+"distance": 1781,
+"airline": "19977"
+            }
+          }
+        },
+        {
+          "start": {
+"identity": 175,
+"labels": [
+              "Flight"
+            ],
+"properties": {
+"date": "11/30/2015 15:22:49",
+"duration": 227,
+"distance": 1781,
+"airline": "19977"
+            }
+          },
+          "relationship": {
+"identity": 131,
+"start": 175,
+"end": 13,
+"type": "DESTINATION",
+"properties": {
+
+            }
+          },
+          "end": {
+"identity": 13,
+"labels": [
+              "Airport"
+            ],
+"properties": {
+"name": "SMF"
+            }
+          }
+        }
+      ],
+"length": 4.0
+    },
+    "connectionPrice": 1584.0
+  }
+]

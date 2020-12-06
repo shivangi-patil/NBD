@@ -1,0 +1,4 @@
+MATCH (flight:Flight)-[connection]->(airport)
+RETURN flight.airline, count(DISTINCT airport) as numberOfCities
+ORDER BY numberOfCities
+

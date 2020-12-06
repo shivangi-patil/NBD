@@ -1,0 +1,3 @@
+MATCH (flights:Flight)-[:ORIGIN]->(airports:Airport) 
+RETURN airports, count(flights) as flightsNum
+ORDER BY flightsNum DESC

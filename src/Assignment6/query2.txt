@@ -1,0 +1,4 @@
+MATCH paths = (A:town {name: "Darjeeling"})-[*]->(B:peak {name: "Sandakphu"})
+WITH paths, relationships(paths) as routes
+RETURN paths, reduce(totalDistance=0, route in routes| totalDistance + route.distance) as totalDistance
+ORDER BY totalDistance

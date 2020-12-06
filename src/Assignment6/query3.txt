@@ -1,0 +1,3 @@
+MATCH places = (A:town {name: "Darjeeling"})-[r:twowheeler]->(B)
+WHERE ALL(r IN relationships(places) WHERE r.summer = 'true')
+RETURN places

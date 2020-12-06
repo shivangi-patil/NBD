@@ -1,0 +1,7 @@
+MATCH connections = (lax:Airport {name: 'LAX'})-[:ORIGIN|DESTINATION*..5]-(day:Airport {name: 'DAY'})
+WITH connections, reduce(sum = 0, flight IN [k IN RANGE(1, LENGTH(connections), 2) | NODES(connections)[k]] |
+    sum + [(flight)<-[:ASSIGN]-(ticket) | ticket.price][0]
+  ) as connectionPrice
+ORDER BY connectionPrice
+LIMIT 1
+RETURN connections, connectionPrice
