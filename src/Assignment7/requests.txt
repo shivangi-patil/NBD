@@ -1,0 +1,46 @@
+1.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"India", "population":1352642280, "language":"hindi", "capital":"New Delhi"}'  http://localhost:8098/buckets/s22556/keys/India
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Russia", "population":146748590, "language":"russian", "capital":"Moscow"}'  http://localhost:8098/buckets/s22556/keys/Russia
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Poland", "population":38383000, "language":"polish", "capital":"Warsaw"}'  http://localhost:8098/buckets/s22556/keys/Poland
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Germany", "population":83166711, "language":"german", "capital":"Berlin"}'  http://localhost:8098/buckets/s22556/keys/Germany
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Australia", "population":25710400, "language":"english", "capital":"Canberra"}'  http://localhost:8098/buckets/s22556/keys/Australia
+
+
+2.
+curl -i http://localhost:8098/buckets/s22556/keys/India
+
+
+3.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Australia", "population":25710400, "language":"english", "capital":"Canberra", "area":7692024}'  http://localhost:8098/buckets/s22556/keys/Australia
+
+
+4.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"Russia", "population":146748590, "capital":"Moscow"}'  http://localhost:8098/buckets/s22556/keys/Russia
+
+
+5.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"name":"India", "population":1352642280, "language":"hindi", "capital":"New Delhi"}'  http://localhost:8098/buckets/s22556/keys/India
+
+
+6.
+curl -i -XDELETE http://localhost:8098/buckets/s22556/keys/Poland
+
+
+7.
+curl -i http://localhost:8098/buckets/s22556/keys/Poland
+
+
+8.
+curl -i -H "Content-Type: application/json" -d '{"name":"Poland", "population":38383000, "language":"polish", "capital":"Warsaw"}'  http://localhost:8098/buckets/s22556/keys/
+
+
+9.
+curl -i http://localhost:8098/buckets/s22556/keys/JnOM9RUcFbT1izVszktdnazC0XV
+
+
+10.
+curl -i -XDELETE http://localhost:8098/buckets/s22556/keys/JnOM9RUcFbT1izVszktdnazC0XV
